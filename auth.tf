@@ -9,3 +9,9 @@ resource "vault_github_user" "admin_user" {
     user = var.user
     policies = [vault_policy.admin.name]
 }
+
+
+resource "vault_auth_backend" "userpass" {
+    type = "userpass"
+    description = "Userpass Auth method"
+}
